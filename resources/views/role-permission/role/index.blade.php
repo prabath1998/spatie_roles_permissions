@@ -1,6 +1,7 @@
 
 
 <x-app-layout>
+    {{-- @include('role-permission.nav-links') --}}
     <div class="container mx-auto px-4 mt-5">
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         <div class="col-span-full">
@@ -43,6 +44,9 @@
                         <td>{{ $role->id }}</td>
                         <td>{{ $role->name }}</td>
                         <td class="float-end">
+
+                            <a href="{{ url('roles/'.$role->id.'/give-permissions') }}" class="inline-flex items-center px-4 py-2 bg-emerald-400 border border-transparent rounded-md font-semibold text-xs text-black uppercase tracking-widest hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition ease-in-out duration-150">Add / Edit Role permission</a>
+
                             @can('update role')
                             @endcan
                             <a href="{{ url('roles/'.$role->id.'/edit') }}" class="inline-flex items-center px-4 py-2 bg-yellow-500 border border-transparent rounded-md font-semibold text-xs text-black uppercase tracking-widest hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition ease-in-out duration-150">Edit</a>
