@@ -41,24 +41,24 @@
                             <td class="px-4 py-2 text-left">
                                 @if (!empty($user->getRoleNames()))
                                     @foreach ($user->getRoleNames() as $rolename)
-                                    <div class="px-4 py-2 text-left flex space-x-2">
-                                        <div
-                                          class="relative grid select-none items-center whitespace-nowrap rounded-lg bg-cyan-500 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white">
-                                          <span class="">{{ $rolename }}</span>
+                                    {{-- <div class="flex gap-2"> --}}
+                                        <div class="center relative inline-block select-none whitespace-nowrap rounded-lg bg-pink-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
+                                          <div class="mt-px">{{ $rolename }}</div>
                                         </div>
-                                    </div>
+
+                                      {{-- </div> --}}
                                     @endforeach
                                 @endif
                             </td>
                             <td class="px-4 py-2 text-left flex space-x-2">
-                                {{-- @can('update user')
-                                @endcan --}}
+                                @can('update user')
                                 <a href="{{ url('users/'.$user->id.'/edit') }}" class="btn btn-success bg-green-500 hover:bg-green-700 text-white py-2 px-2 rounded">Edit</a>
+                                @endcan
 
 
-                                {{-- @can('delete user')
-                                @endcan --}}
+                                @can('delete user')
                                 <a href="{{ url('users/'.$user->id.'/delete') }}" class="btn btn-danger bg-red-500 hover:bg-red-700 text-white py-2 px-2 rounded">Delete</a>
+                                @endcan
                             </td>
                         </tr>
                         @endforeach

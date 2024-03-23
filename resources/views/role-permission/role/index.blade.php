@@ -45,15 +45,18 @@
                         <td>{{ $role->name }}</td>
                         <td class="float-end">
 
+                            @can('update role')
+
                             <a href="{{ url('roles/'.$role->id.'/give-permissions') }}" class="inline-flex items-center px-4 py-2 bg-emerald-400 border border-transparent rounded-md font-semibold text-xs text-black uppercase tracking-widest hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition ease-in-out duration-150">Add / Edit Role permission</a>
+                            @endcan
 
                             @can('update role')
-                            @endcan
                             <a href="{{ url('roles/'.$role->id.'/edit') }}" class="inline-flex items-center px-4 py-2 bg-yellow-500 border border-transparent rounded-md font-semibold text-xs text-black uppercase tracking-widest hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition ease-in-out duration-150">Edit</a>
+                            @endcan
 
                             @can('delete role')
-                            @endcan
                             <a href="{{ url('roles/'.$role->id.'/delete') }}" class="inline-flex items-center px-4 py-2 bg-red-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition ease-in-out duration-150">Delete</a>
+                            @endcan
                         </td>
                     </tr>
                     @endforeach

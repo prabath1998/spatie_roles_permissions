@@ -2,8 +2,8 @@
 
     <div class="container mx-auto px-4 mt-5">
       <div class="flex justify-between">
-        <h4 class="text-2xl font-semibold mb-4">Edit User</h4>
-        <a href="{{ url('users') }}" class="btn btn-danger">Back</a>
+        <h4 class="text-2xl font-semibold mb-4 text-white">Edit User</h4>
+        <a href="{{ url('users') }}" class="btn btn-danger bg-red-500 hover:bg-red-700 text-white py-2 px-2 rounded">Back</a>
       </div>
 
       @if ($errors->any())
